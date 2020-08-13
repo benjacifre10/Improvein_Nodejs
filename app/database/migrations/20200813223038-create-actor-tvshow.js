@@ -1,24 +1,30 @@
 'use strict';
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('seasons', {
+    
+    return await queryInterface.createTable('actor_tvshow', { 
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      number: {
+      actor_id: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: "actors",
+          key: "id"
+        }
       },
-      tvshowId: {
+      tvshow_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "tvshows",
           key: "id"
-        },
-        onDelete: "CASCADE"
+        }
       },
       createdAt: {
         allowNull: false,
@@ -29,8 +35,10 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+  
   },
+
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('seasons');
+    return await queryInterface.dropTable('actor_tvshow');
   }
 };

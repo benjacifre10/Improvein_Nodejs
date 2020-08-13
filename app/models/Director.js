@@ -1,18 +1,15 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
+  
   class Director extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      Director.hasMany(models.Movie, { as: "movies", foreignKey: "directorId" });
+      Director.hasMany(models.Episode, { as: "episodes", foreignKey: "directorId" });
     }
   };
+
   Director.init({
     name: { type: DataTypes.STRING, allowNull: false },
     age: DataTypes.INTEGER
@@ -20,5 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Director',
   });
+  
   return Director;
 };

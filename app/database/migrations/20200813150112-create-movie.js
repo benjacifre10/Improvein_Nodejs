@@ -18,6 +18,14 @@ module.exports = {
       rate: {
         type: Sequelize.INTEGER
       },
+      directorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "directors",
+          key: "id"
+        },
+        onDelete: "CASCADE"
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -12,6 +12,22 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      seasonId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "seasons",
+          key: "id"
+        },
+        onDelete: "CASCADE"
+      },
+      directorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "directors",
+          key: "id"
+        },
+        onDelete: "CASCADE"
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

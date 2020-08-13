@@ -1,18 +1,15 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class TVShow extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  
+  class TVShow extends Model {  
     static associate(models) {
-      // define association here
+      TVShow.belongsToMany(models.Actor, { as: "actors", through: "actor_tvshow", foreignKey: "tvshow_id" });
+      TVShow.hasMany(models.Season, { as: "seasons", foreignKey: "tvshowId" });
     }
   };
+  
   TVShow.init({
     name: { type: DataTypes.STRING, allowNull: false },
     rate: DataTypes.INTEGER,
@@ -22,5 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'TVShow',
   });
+  
   return TVShow;
 };
