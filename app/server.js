@@ -16,6 +16,6 @@ app.listen(PORT, () => {
     console.log(`App listening on http://localhost:${PORT}`);
     sequelize.authenticate()
         .then(() => {
-            console.log('nos hemos conectado a la base de datos')
+            console.log('We are connected!!')
         })
 });
