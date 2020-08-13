@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
+// Controllers
 const AuthController = require('./controllers/AuthController');
+// Middlewares
+const auth = require('./middlewares/auth');
 
 // Home
-router.get('/', (req, res) => res.json({ message: 'This is Home' }));
+router.get('/', auth, (req, res) => res.json({ message: 'This is Home' }));
 
 // Auth
 router.post('/api/signin', AuthController.signIn);

@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         isAlpha: {
-          msg: "The name can only contains characters"
+          msg: "Name can only contains characters"
         },
         len: {
           args: [2, 255],
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: {
           args: [6, 255],
-          msg: "The password have must at least 6 characters"
+          msg: "The password must have at least 6 characters"
         }
       }
     },
