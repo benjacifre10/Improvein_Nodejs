@@ -39,3 +39,10 @@ The database doesn't need to be presented. But the model should be represented i
 
 # Run Program
 -> npm run dev
+
+# Comments
+1- I add the postman_collection.json with the tests
+2- I add the sql file that contains the database
+3- I add the third endpoint looking all the movies and tvshows for a particular actor
+
+# Thank for the opportunity, greetings

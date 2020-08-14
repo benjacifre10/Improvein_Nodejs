@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      ratee: {
+      rate: {
         type: Sequelize.INTEGER
       },
       year: {

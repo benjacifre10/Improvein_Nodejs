@@ -1,0 +1,228 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Improvein",
+		"_postman_id": "d4a9a5df-543c-9da5-f542-1d35829dff3b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Challenge Node",
+			"description": "",
+			"item": [
+				{
+					"name": "POST user signup",
+					"request": {
+						"url": "http://localhost:3000/api/signup",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "benja",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "benja",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "benjacifre@hola.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST user signin",
+					"request": {
+						"url": "http://localhost:3000/api/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "benja",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "benjacifre@hola.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST user refresh",
+					"request": {
+						"url": "http://localhost:3000/api/refresh",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "benja",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "benjacifre@hola.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "refreshToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYmVuamEiLCJwYXNzd29yZCI6IiQyYSQxMCRHOC5VajY1QnV0aENnd0xLYmlaUU51aWhDZXpEYWtnZDBycHpTVUNBMDJxNGxIRzdUQ3hEZSIsImVtYWlsIjoiYmVuamFjaWZyZUBob2xhLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMTBUMjI6NTQ6MjguMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjAtMDgtMTBUMjI6NTQ6MjguMDAwWiJ9LCJpYXQiOjE1OTcyNTQzMzQsImV4cCI6MTU5NzI1NDYzNH0.3tiXZt7vE7zQSk9vqr3c4t69c4Xq0MWaaaaxuZid59o",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET home",
+					"request": {
+						"url": "http://localhost:3000/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET movies filter and order",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/api/movies?filter=cow&sort=name&order=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "cow",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYmVuamEiLCJwYXNzd29yZCI6IiQyYSQxMCRkbGJCd1NsbGVlVjVNeVNRMFk4aVp1aUdlNElRa20vME5UN2tPaTF2N2MuQnlmMTBNMWJvdSIsImVtYWlsIjoiYmVuamFjaWZyZUBob2xhLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiJ9LCJpYXQiOjE1OTczMzg3MjUsImV4cCI6MTU5NzM0MjMyNX0.OhWMOp6SnUcgppFF-CYEYAZD0FfRsEIpBgzawIikcbU",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET episode",
+					"request": {
+						"url": "http://localhost:3000/api/episodes/80",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYmVuamEiLCJwYXNzd29yZCI6IiQyYSQxMCRkbGJCd1NsbGVlVjVNeVNRMFk4aVp1aUdlNElRa20vME5UN2tPaTF2N2MuQnlmMTBNMWJvdSIsImVtYWlsIjoiYmVuamFjaWZyZUBob2xhLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiJ9LCJpYXQiOjE1OTczNzU5ODAsImV4cCI6MTU5NzM3OTU4MH0.5UrtSRu3B_oVKMmaQ6D1qgufiLQlikj0GX3T6xDjeGo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET actor",
+					"request": {
+						"url": "http://localhost:3000/api/actors/10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYmVuamEiLCJwYXNzd29yZCI6IiQyYSQxMCRkbGJCd1NsbGVlVjVNeVNRMFk4aVp1aUdlNElRa20vME5UN2tPaTF2N2MuQnlmMTBNMWJvdSIsImVtYWlsIjoiYmVuamFjaWZyZUBob2xhLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjAtMDgtMTNUMTQ6MzI6NTAuMDAwWiJ9LCJpYXQiOjE1OTczNzU5ODAsImV4cCI6MTU5NzM3OTU4MH0.5UrtSRu3B_oVKMmaQ6D1qgufiLQlikj0GX3T6xDjeGo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
